@@ -1,0 +1,380 @@
+:root{
+    --main-color:#343434;
+    --text-white:#fff;
+    --font-body:'Poppins', sans-serif;
+    --font-heading:'Montserrat', sans-serif;
+}
+body{
+    font-family: var(--font-body);
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: var(--font-heading);
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+.bg-section{
+    background-color: #f7f7f782;
+}
+.btn-black {
+    --bs-btn-color: var(--text-white);
+    --bs-btn-bg:var(--main-color);
+    --bs-btn-border-color: var(--main-color);
+    --bs-btn-hover-color: var(--main-color);
+    --bs-btn-hover-bg: var(--text-white);
+    --bs-btn-hover-border-color: var(--main-color);
+}
+.btn-white {
+    --bs-btn-color: #000;
+    --bs-btn-bg: transparent;
+    --bs-btn-border-color: var(--main-color);
+    --bs-btn-hover-color: var(--text-white);
+    --bs-btn-hover-bg: var(--main-color);
+    --bs-btn-hover-border-color: var(--main-color);
+}
+.main-title h2::after{
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(rgba(255,255,255,0.85)0% 100%), url(../imgs/download.png);
+    background-repeat: repeat;
+    width: 17%;
+    height: 30px;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+/* loading */
+.spinner-border {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--text-white);
+    z-index: 9999999999999;
+}
+/* !!!!!start NAv!!!!! */
+.black{
+    background-color: #000;
+}
+.navbar-brand ,
+nav .navbar-nav>li>a {
+    color: #fff !important;
+    position: relative;
+    overflow: hidden;
+}
+nav .navbar-nav>li>a:after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    bottom: 5px;
+    left: 8px;
+    transition: all 0.5s;
+}
+
+nav .navbar-nav>li .active:after {
+    width: 75%;
+}
+
+
+/* !!!!!end NAV!!!!! */
+/* !!!!!start HOME!!!!! */
+header {
+    height: 100vh;
+    background:linear-gradient(rgba(0,0,0,0.6)0% 100%), url(../imgs/bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+header .home-icons i{
+    width: 35px;
+    height: 35px;
+    background-color: #000B11;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* !!!!!end HOME!!!!! */
+/* !!!!!start ABOUT!!!!! */
+.mb-30{
+    margin-bottom: 30px;
+}
+#about .image {
+    
+    position: relative;
+}
+#about .image::after{
+    content: "";
+    width: 85%;
+    height: 85%;
+    position: absolute;
+    left: -25px;
+    bottom: -25px;
+    background-image: linear-gradient(rgba(255,255,255,0.8)0% 100%), url(../imgs/download.png);
+    background-repeat: repeat;
+    z-index: -1;
+}
+#about .about-caption .sub-title{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #999;
+}
+#about .about-caption p{
+    color: #748182;
+    line-height: 1.6;
+}
+#about .skills .progress{
+    width: 100%;
+    height: 25px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: #f7f7f7;
+    box-shadow: 0 2px 7px rgba(0,0,0,0.15) inset;
+    position: relative;
+}
+#about .skills .progress h6{
+    font-size: .8125rem;
+    position: relative;
+    z-index: 20;
+    top: 3px;
+    color: var(--text-white);
+}
+#about .skills .progress span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 5px;
+    background-color: #1c1c1c;
+    transition: all 1s;
+}
+#about .skills .progress span::after{
+    content: attr(data-value);
+    position: absolute;
+    top: 2px;
+    right: 10px;
+    font-size: 11px;
+    color: var(--text-white);
+}
+/* !!!!!end ABOUT!!!!! */
+/* !!!!!start SERVICES!!!!! */
+#services .ser-box{
+    background-color: var(--text-white);
+    
+}
+#services .ser-box:hover .box-icon i{
+    color: var(--text-white);
+    background-color: var(--main-color);
+}
+#services .ser-box .box-icon i{
+    background-color: #F6F6F6;
+    transition: color .5s,background-color 0.5s ;
+}
+#services .ser-box .box-text p {
+    color:  #748182;
+    line-height: 22.4px;
+    font-size: .875rem;
+    width: 90%;
+}
+/* !!!!!end SERVICES!!!!! */
+/* !!!!!start WORK!!!!! */
+
+.nav-underline .nav-link {
+    padding-right: 0;
+    padding-left: 0;
+    border-bottom: var(--bs-nav-underline-border-width) solid transparent;
+    color: #000;
+    font-weight: 700
+}
+#works .text-content .icon i{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #111;
+    background-color: #111;
+    color: #eee;
+}
+#works .work-content .text-content{
+    position: absolute;
+    top: 51%;
+    width: 93%;
+    z-index: 99;
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: opacity 0.5s;
+}
+#works .work-content:hover .text-content{
+    opacity: 1;
+}
+#works .work-content .text-content h6{
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: bottom 0.5s;
+}
+#works .work-content:hover .text-content h6{
+    bottom:50%;
+}
+#works .work-content .overlay{
+    background-color:var(--text-white);
+    position: absolute;
+    top: 10px;
+    right: 13px;
+    left: 10px;
+    bottom: 9px;
+    width: 95%;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+#works .work-content:hover .overlay{
+    opacity: 1;
+    transform: translateY(0);
+}
+/* !!!!!end WORK!!!!! */
+/* !!!!!start CLIENTS!!!!! */
+#clients .client-items img{
+    width: 6.25rem;
+}
+#clients .client-items p{
+    color: #748182;
+    line-height: 24px;
+    font-size: .9375rem;
+}
+#clients .client-items h6{
+    line-height:17.6px;
+    color: #343434;
+}
+#clients .client-items span{
+    line-height:17.1429px;
+    color: #888888;
+    font-size: .6875rem;
+}
+#clients .carousel-indicators [data-bs-target] {
+    all:unset ;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-inline: 2px;
+    cursor: pointer;
+    background-color: var(--main-color);
+    opacity: .7;
+    transition: opacity .6s;
+}
+#clients .carousel-indicators  .active {
+    opacity: 1;
+
+}
+/* !!!!!end CLIENTS!!!!! */
+/* !!!!!start counter!!!!! */
+.counter .counter-icon i{
+    color: #343434;
+}
+.counter-num h3 {
+    font: 800 26px system-ui;
+    color: #343434;
+}
+/* !!!!!end counter!!!!! */
+/* !!!!!Start TEAM!!!!! */
+.single-team {
+    background-color: rgba(52, 52, 52,.8);
+    margin-bottom: 10px;
+}
+.img-area {
+    overflow: hidden;
+    position: relative;
+}
+.img-area img {
+    transition: scale 0.4s ease 0s;
+}
+.img-area:hover img {
+    scale: 1.2;
+    
+}
+.img-area:hover .social,
+.single-team:hover .social {
+    opacity:1;
+    transform: rotateY(0deg) scale(0.98,0.98);
+    
+}
+.img-area .social {
+    background-color: rgba(255, 255, 255, 0.95);
+    position: absolute;
+    text-align: center;
+    inset: 5px;
+    opacity: 0;
+    transition:  transform 0.5s,opacity 0.5s;
+    transform: rotateY(180deg) scale(0.5, 0.5);
+}
+.img-area .social ul {
+    text-align: center;
+    position: relative;
+    top: 181px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.img-area .social ul li a {
+    border: 1px solid #000;
+    color: #fff;
+    background-color: #000;
+    line-height: 40px;
+    text-align: center;
+    
+}
+.img-area .social ul i{
+    margin-inline: 5px;
+    width: 50px;
+    height: 50px;
+    background-color: #343434;
+    border-radius: 50%;
+    color: var(--text-white);
+}
+.img-area .social ul li i:hover {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+.img-text {
+    padding: 25px;
+    color: #fff;
+    text-align: center;
+}
+.img-text h5 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+/* !!!!!end TEAM!!!!! */
+/* !!!!!Start CONTACT!!!!! */
+#contact .box i{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #F6F6F6;
+    transition: color .5s,background-color 0.5s ;
+}
+#contact .box:hover i{
+    color: var(--text-white);
+    background-color: var(--main-color);
+}
+/* !!!!!end CONTACT!!!!! */
+/* !!!!!start FOOTER!!!!! */
+.footer-bg{
+    height: 100%;
+    width: 100%;
+    background-color: #1C1C1C;
+}
+.text-footer{
+    color: #888888b6;
+}
+.form-control:focus {
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color:#DEE2E6;
+    outline: 0;
+    box-shadow:none;
+}
+/* !!!!!end FOOTER!!!!! */
